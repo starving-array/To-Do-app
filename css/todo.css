@@ -65,7 +65,6 @@ body {
 }
 #foot>a:hover{
     text-decoration: underline;
-    font-family: cursive;
 }
 #search > h1 {
   color: white;
