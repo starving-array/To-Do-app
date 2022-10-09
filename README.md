@@ -1,5 +1,5 @@
 # To-Do-app
-This is a basic todo app made made.
+This is a basic todo app.
 You can add, check and delete the list items.
 
 ![To_Do](to-do-app.png)
