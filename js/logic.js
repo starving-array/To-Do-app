@@ -1,4 +1,6 @@
 // todo
+
+const url = "https://cryptic-thicket-06903.herokuapp.com/api/todo";
 class Todo {
     #items;
     #onStateCall;
@@ -15,7 +17,7 @@ class Todo {
         title: value,
         status: false,
       };
-      fetch("https://json-server-mocker-masai.herokuapp.com/tasks", {
+      fetch(url, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -30,7 +32,7 @@ class Todo {
     }
   
     deleteTodo(id) {
-      return fetch("https://json-server-mocker-masai.herokuapp.com/tasks/" + id, {
+      return fetch(`${url}/` + id, {
         method: "DELETE",
         headers: {
           "Content-Type": "application/json",
@@ -45,7 +47,7 @@ class Todo {
     }
   
     toggleStatus(id, newStatus) {
-      return fetch("https://json-server-mocker-masai.herokuapp.com/tasks/" + id, {
+      return fetch(`${url}/` + id, {
         method: "PATCH",
         headers: {
           "Content-Type": "application/json",
@@ -62,11 +64,12 @@ class Todo {
   
     //
     getTodos() {
-      return fetch("https://json-server-mocker-masai.herokuapp.com/tasks")
+      return fetch(url)
         .then((res) => res.json())
         .then((res) => {
           this.#items = res;
           this.statusUpdate();
+          console.log(res)
         })
         .catch((er) => {});
     }
