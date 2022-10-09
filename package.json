@@ -1,0 +1,24 @@
+{
+  "name": "to-do-app",
+  "version": "1.0.0",
+  "description": "This is a basic todo app",
+  "main": "index.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/starving-array/To-Do-app.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/starving-array/To-Do-app/issues"
+  },
+  "homepage": "https://github.com/starving-array/To-Do-app#readme",
+  "dependencies": {
+    "json-server": "^0.17.0"
+  }
+}
