@@ -129,8 +129,10 @@ function createTodoElements(item) {
 const addBtn = document.getElementById("add-todo");
 
 addBtn.addEventListener("click", () => {
-  const input = document.getElementById("todo-input");
+  let input = document.getElementById("todo-input");
   const text = input.value;
+
+  input.value = "";
   todo.addTodo(text).then(() => {
     renderItems(todo.items);
   });
