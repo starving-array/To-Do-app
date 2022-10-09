@@ -39,6 +39,8 @@ body {
 .newitem > :nth-child(2) {
   width: 450px;
   overflow: scroll;
+  overflow-wrap: normal;
+  overflow: hidden;
 }
 #search {
   position: sticky;
