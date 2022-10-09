@@ -26,6 +26,7 @@ class Todo {
     })
       .then((res) => {
         console.log("success");
+        // responce funtion
         this.getTodos();
       })
       .catch((res) => {});
@@ -93,23 +94,34 @@ todo.addStateChange(function () {
   renderItems(todo.items);
 });
 todo.getTodos();
+
 function createTodoElements(item) {
   const div = document.createElement("div");
+  div.setAttribute("class", "newitem");
   const title = document.createElement("p");
-  const button = document.createElement("button");
+  const button = document.createElement("input");
+  button.type = "checkbox";
+  if (item.status) {
+    button.checked = "checked";
+  }
   const deleteBtn = document.createElement("button");
   button.addEventListener("click", () => {
     todo.toggleStatus(item.id, !item.status);
-    console.log(item);
   });
   deleteBtn.addEventListener("click", () => {
-    todo.deleteTodo(item.id);
+    // document.getElementById(item.id).className = "delete";
+    document.getElementById(item.id).parentNode.setAttribute("class", "delete");
+    setTimeout(function () {
+      todo.deleteTodo(item.id);
+    }, 500);
     console.log(item);
   });
   title.innerText = item.title;
+  title.setAttribute("class", item.status);
+  title.setAttribute("id", item.id);
   button.textContent = item.status.toString();
   deleteBtn.innerText = "Delete";
-  div.append(title, button, deleteBtn);
+  div.append(button, title, deleteBtn);
 
   return div;
 }
